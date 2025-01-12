@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrustado</title>
+    <!-- icono del la pestaña -->
+    <link rel="shortcut icon" href="./Biblioteca/Imagenes/spheres .jpg">
+    <!-- Script para leer A-frame -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+      <!-- Script para leer Environments-->
+    <script
+        src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+
+        <link rel="stylesheet" href="./estilos.css">
+
+  </head>
+  <body>
+
+    <h5> HELLO WORLD </h5>
+
+    <img class="mundo-der" src="https://www.cameronsworld.net/img/content/2/28.gif">
+
+    <img class="mundo-IZQ" src="https://www.cameronsworld.net/img/content/2/28.gif">
+
+    <marquee behavior="" direction="right"> Hola WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW ☻ ♥ Hola </marquee>
+
+    <pre>                `         '
+      ;,,,             `       '             ,,,;
+      `YES8888bo.       :     :       .od8888YES'
+        888IO8DO88b.     :   :     .d8888I8DO88
+        8LOVEY'  `Y8b.   `   '   .d8Y'  `YLOVE8
+       jTHEE!  .db.  Yb. '   ' .dY  .db.  8THEE!
+         `888  Y88Y    `b ( ) d'    Y88Y  888'
+          8MYb  '"        ,',        "'  dMY8
+         j8prECIOUSgf"'   ':'   `"?g8prECIOUSk
+           'Y'   .8'     d' 'b     '8.   'Y'
+            !   .8' db  d'; ;`b  db '8.   !
+               d88  `'  8 ; ; 8  `'  88b
+              d88Ib   .g8 ',' 8g.   dI88b
+             :888LOVE88Y'     'Y88LOVE888:
+             '! THEE888'       `888THEE !'
+                '8Y  `Y         Y'  Y8'
+                 Y                   Y
+                 !                   !
+                          ♥♥♥
+                </pre>
+
+    <pre>
+      __   __       ___   ___      ___   ___
+      (  \,/  )     ( @ \Y/ @ )    ((o)\,/(o))
+       \_ | _/       \__+|+__/      \__ | __/
+       (_/ \_)        {_/ \_}        {_/'\_}
+      
+      
+       ___   ___     ___   ___       __   __
+      ( @ \v/ m )   { ~ \,/ ~ }     (()\,/  )
+       \__+|+__/     \_~_|_~_/       \_ | _/
+        {_/ \_}       (_/'\_)        { /'\*}
+      
+      
+       __ Y __        __   __       ___   ___
+      (()\o/())     ( s \Y/ s )    ( q \,/ p )
+       \_ I _/       \_<>|<>_/      \_ 6|9 _/
+        (/I\)         (_/'\_)        {_/ \_}
+
+    </pre>                       
+
+
+    <div class="espacio-3D" id="myEmbeddedScene">
+    <a-scene embedded>
+
+        <a-assets>
+            <!-- Imagenes -->
+            <img id="spheres" src="./Biblioteca/Imagenes/spheres .jpg">
+        </a-assets>
+
+        <!-- Camara -->
+         <a-camera><a-cursor></a-cursor></a-camera>
+
+              <!-- Environment -->
+              <a-entity
+              environment="active: true; skyType: gradient; skyColor: #75b2f5; horizonColor: #9ec3ea; lightPosition: 1 4 1s; fog: 0.7; flatShading: true; ground: canyon; groundYScale: 3.5699999999999994; groundTexture: checkerboard; groundColor: #fee33f; groundColor2: #f8eca2; dressing: stones; dressingAmount: 100; dressingColor: #e7cdc6; dressingScale: 3.8299999999999996; grid: 1x1; dressingOnPlayArea: 0.02; gridColor: #39d2f2; shadowSize: 10.52; preset: starry"
+              animation__cielo="property:environment.skyColor; to: #ec00d3; dur: 8000; easing: linear; loop: true; dir: alternate"
+              animation__pisos="property:environment.groundColor; to: #8FF7FF; dur: 8000; easing: linear; loop: true; dir: alternate"></a-entity>
+
+                <!-- Link en la misma pestaña -->
+            <a-entity position="-0.007 4.141 -7.646" rotation="0 0 0" link="href: index.html; targetId: spheres"
+            geometry="primitive: plane; width: 2; height: 2"
+            material="src: #spheres; transparent: true; side:double"></a-entity>
+
+
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-sky color="#ECECEC"></a-sky>
+
+
+    </a-scene>
+
+    <script>
+      function animateTitle() {
+        i >= message.length - 1 ? (i = 0) : i++,
+          (document.title = message[i]),
+          setTimeout('animateTitle()', 200)
+      }
+      var message = [
+        '☻♥☻♥▁▂▃▄▅▆▇ `^^^^^~ ░ ui▀┳╲ ☺ .info ▓',
+        '▂▁▂▃▄▅▆` ^^^^^~ ░ ui▀┳╲ ☺ .info ▓',
+        '▃▂▁▂▃▄▅ `^^^^^~ ░ ui▀┳╲ ☻ .info ▓',
+        '▄▃▂▁▂▃▄` ^^^^^~ ░ ui▀┳╲ ☻ .info ▓',
+        '▅▄▃▂▁▂▃ `^^^^^~ ░ ui▀┳╲ ☺ .info ▓',
+        '▆▅▄▃▂▁▂` ^^^^^~ ░ ui▀┳╲ ☺ .info ▓',
+        '▇▆▅▄▃▂▁ `^^^^^~ ░ ui▀┳╲ ☻ .info ▓',
+        '▆▇▆▅▄▃▂` ^^^^^~ ░ ui▀┳╲ ☻ .info ▓',
+        '▅▆▇▆▅▄▃ `^^^^^~ ░ ui▀┳╲ ☺ .info ▓',
+        '▄▅▆▇▆▅▄` ^^^^^~ ░ ui▀┳╲ ☺ .info ▓',
+        '▃▄▅▆▇▆▅ `^^^^^~ ░ ui▀┳╲ ☻ .info ▓',
+        '▂▃▄▅▆▇▆` ^^^^^~ ░ ui▀┳╲ ☻ .info ▓'
+      ],
+        i = 0
+      animateTitle()
+    </script>
+
+
+</div>
+
+  </body>
+</html>

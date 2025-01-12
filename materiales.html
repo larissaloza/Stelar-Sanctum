@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Materiales</title>
+    <!-- Script para leer A-frame -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+      <!-- icono del la pestaña -->
+      <link rel="shortcut icon" href="./Biblioteca/Gifs/nerv.gif">
+            <!-- para leer animación -->
+            <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+                    <!-- script para texturas enviropacks-->
+        <script src="https://cdn.jsdelivr.net/npm/aframe-enviropacks@latest/aframe-enviropacks.js"></script>
+  </head>
+  <body>
+    <a-scene  >
+
+        
+        <a-assets>
+            <!-- Modelos -->
+            <a-asset-item id="cubes" src="./Biblioteca/Modelos/cubes/cubes.glb"></a-asset-item>
+            <a-asset-item id="cylinder" src="./Biblioteca/Modelos/cylindrical-shape/cylinder.glb"></a-asset-item>
+            <a-asset-item id="toroidal" src="./Biblioteca/Modelos/toroidal_rind_3d_shape_obj/new.gltf"></a-asset-item>
+       </a-assets>
+      
+        <!-- Enviropacks: tankfarm, sandstone, interior, winter, autumn, or night -->
+<a-entity enviropack="preset: sandstone"></a-entity>
+
+<!-- Llamando Modelos -->
+<!-- Modelos con material: ground-grass-rock, ground-sandstone, ground-wood-floor, ground-snow, ground-forest, bark, gold, metal, plastic, fabric, concrete, rock, wood, planks, snow. Or could also be a "raw" material: Fabric026, Metal009,d Metal035, Plastic, Snow003, Snow004, Wood027, WoodFloor041, aerial_grass_rock, bark_brown_02, brown_planks_04, forrest_ground_03, mossy_rock, rock_05, sandstone_cracks -->
+<a-entity position="-21.594 -0.479 -10.276" rotation="0 0 0" gltf-model="#cylinder" scale="6 6 8"  enviropack-material="material: gold; displacementMap: true" shadow animation__rotacion="property:rotation; to: 0 0 360; loop:true; dur:9000; easing: linear"></a-entity>
+<a-entity position="23.278 -0.479 -10.276" rotation="0 0 0" gltf-model="#cylinder" scale="6 6 8"  enviropack-material="material: gold; displacementMap: true" shadow animation__rotacion="property:rotation; to: 0 0 360; loop:true; dur:9000; easing: linear"></a-entity>
+<a-entity position="0 -0.479 -15.562" rotation="0 0 0" gltf-model="#toroidal" scale="15 15 15"  enviropack-material="material: planks; displacementMap: true" shadow animation__rotacion="property:rotation; to: 0 0 360; loop:true; dur:9000; easing: linear"></a-entity>
+<a-entity position="0 -0.479 16.250" rotation="0 0 0" gltf-model="#toroidal" scale="15 15 15"  enviropack-material="material: planks; displacementMap: true" shadow animation__rotacion="property:rotation; to: 0 0 360; loop:true; dur:9000; easing: linear"></a-entity>
+
+<!-- Primitiva con material -->
+<a-torus-knot position="0 0 -15.515" arc="180" p="2" q="7" radius="5" radius-tubular="0.1"  geometry="p: 4.01; q: 6.87; radius: 2.01; radiusTubular: 0.08" enviropack-material="material: Metal009; displacementMap: true" ></a-torus-knot>
+
+
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+
+
+body{
+    background-image: url(https://www.cameronsworld.net/img/content/1/bg.png);
+
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+h5{
+    color:beige;
+    text-align: center;
+    animation: anim-9 12.5s linear infinite alternate;
+}
+
+.mundo-der{
+    float: right;
+    margin-right: 80px;
+}
+
+.mundo-izq{
+    float: left;
+    margin-left: 60px;
+}
+
+img{
+    width: 10%;
+}
+
+marquee{
+    color: white;
+    font-size: 30px;
+}
+
+pre{
+    color: white;
+}
+
+
+@keyframes anim-9 {
+    10%{ transform:matrix(0,3,2.4,4.4,0.9,2,3.1)}
+    20% {transform: matrix(0.2,4.9,4.3,3.1,2.3,4.4)}
+100%{ transform: matrix(4.3,4.9,2.5,3.4,3.6,4.9)}
+}
+
+/* Revisar mas info sobre matrix css */
+
+
+.espacio-3D{
+    height: 600px;
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}

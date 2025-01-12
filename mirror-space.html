@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirror House</title>
+    <!-- icono del la pestaña -->
+  <link rel="shortcut icon" href="./Biblioteca/Imagenes/spheres .jpg">
+  <!-- Script para leer A-frame -->
+  <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+  <!-- Script de Particulas -->
+  <script
+    src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+  <!-- script para mirror component -->
+  <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script>
+  <!-- scipts para animacion de agua -->
+  <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
+  <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+  
+</head>
+
+<body>
+    <a-scene>
+
+
+  
+<a-assets>
+
+<!-- Imagenes -->
+<img id="sky" src="./Biblioteca/Imagenes/sky.jpg">
+<img id="gota" src="./Biblioteca/Imagenes/gota.png">
+
+<!-- Modelos -->
+<a-asset-item id="ball" src="./Biblioteca/Modelos/discoball_.obj"></a-asset-item>
+
+</a-assets>
+
+
+
+
+<!-- Camara -->
+<a-camera position="0 1.6 10"><a-cursor  geometry="primitive: ring; radiusInner: 0.04; radiusOuter: 0.05"
+    material="color: pink; shader: flat; opacity:0.3"></a-cursor></a-camera>
+
+<!-- Piso -->
+<a-plane color="grey" rotation="-90 0 0" height="100" width="100"></a-plane>
+
+<!-- Cielo -->
+<a-sky height="2048" radius="30" src="#sky" width="3048" animation="property:rotation; to: 0 360 0; loop:true; dur:201900"></a-sky>
+
+     <!-- Luces animadas -->
+     <a-light type="directional" color="#FFF" intensity="1" position="-1 2 1" animation="property: color; from: #FFFFFF; to: #4f59db; dur: 50000; loop: true; dir:alternate"></a-light>
+     <a-light type="ambient" color="#FFF" intensity="0.2" animation="property: color; from: #FFFFFF; to: #4f59db; dur: 50000; loop: true;dir:alternate"></a-light>
+
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+
+
+<!-- Esfera con mirror, Documentacion: https://github.com/alfa256/aframe-mirror-component-->
+<a-obj-model src="#ball" mirror="repeat:true; resolution: 32;" position="0 5.5 0">
+    <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="forever" dur="10000" easing="linear">
+  </a-obj-model>
+
+  <!-- Torus knot con mirror -->
+  <a-torus-knot mirror="resolution:64; interval:2000 ms; repeat:true " position="0 1 0" scale="1.5 1.5 1.5"></a-torus-knot>
+
+  <!-- Esfera con mirror y animacion orbital en una direccion -->
+  <a-entity position="5 10 5">
+    <a-sphere position="5 5 5" mirror="resolution: 16; distance: 1000; interval: 250; repeat: true"></a-sphere>
+    <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="forever" dur="5000"
+    easing="linear"></a-animation>
+  </a-entity>
+
+<!-- Esfera y animacion orbital en dos direcciones -->
+<a-entity position="5 10 5">
+    <a-sphere position="5 5 5" color="pisddddnk"></a-sphere>
+    <a-animation attribute="rotation" from="0 0 0" to="360 0 360" repeat="forever" dur="9000"
+      easing="linear"></a-animation>
+  </a-entity>
+</a-entity>
+
+
+<!-- Agua -->
+<a-entity id="ocean" ocean="density:80" speed="0.5" position="0 0.4 0" scale="10 10" material="color:#4dade0; opacity:0.6; metalness:0; roughness:1" rotation="-90 0 0" ></a-entity>
+
+
+  <!-- Particulas, Documentacion: https://www.npmjs.com/package/aframe-particle-system-component -->
+  <!-- <a-entity 
+  position="0 2.25 -15" 
+  particle-system="preset: snow; 
+                   maxAge: 20; 
+                   size:1; 
+                   particleCount: 10000; 
+                   maxParticleCount: 30000;  
+                   velocity: 0 -80 0; 
+                   opacity:1;
+                   acceleration: 0 -20 0;">
+</a-entity> -->
+
+<a-entity position="0 2.25 -15" 
+          particle-system="preset: rain; 
+                           color: #0000FF,#00FF00,#FF0000; 
+                           texture: ./Biblioteca/Imagenes/gota.png;  
+                           particleCount: 1000; 
+                           maxParticleCount: 30000;  
+                           size: 1;">
+</a-entity>
+
+</a-scene> 
+
+
+</body>
+</html>
